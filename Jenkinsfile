@@ -3,7 +3,7 @@ pipeline {
 agent any
 
 environment {
-DOCKERHUB = "pooja1096/static_webpage"
+DOCKERHUB = "pooja1096/zepto_static_webpage"
 }
 
 stages {
