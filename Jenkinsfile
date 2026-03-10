@@ -13,10 +13,17 @@ steps {
     git branch: 'main', url:'https://github.com/pooja9694/static_webpage.git'
 }
 }
+stage('print info') {
+steps {
+    sh """
+    whoami
+    """
+}
+}
 
 stage('Build Docker Image') {
 steps {
-sh 'docker build -t $DOCKERHUB .'
+sh 'sudo docker build -t $DOCKERHUB .'
 }
 }
 
