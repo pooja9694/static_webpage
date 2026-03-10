@@ -35,6 +35,10 @@ background:#ff2e7a;
 color:white;
 text-align:center;
 padding:80px 20px;
+background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxDE77zs_oqGzD6KGOXHkrUYuC9zCiWHtBZw&s);
+background-size: contain;
+background-size: 100% 100%;
+background-repeat: no-repeat;
 }
 
 .hero h1{
