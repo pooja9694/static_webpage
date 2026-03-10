@@ -13,10 +13,17 @@ steps {
     git branch: 'main', url:'https://github.com/pooja9694/static_webpage.git'
 }
 }
-stage('print info') {
+stage("Docker Version") {
+steps {
+     sh "sudo docker --version"
+}
+}
+stage('Print Info') {
 steps {
     sh """
     whoami
+    hostname
+    echo $JOB_NAME
     """
 }
 }
@@ -27,6 +34,15 @@ sh 'sudo docker build -t $DOCKERHUB .'
 }
 }
 
+stage("Docker tag") {
+           steps {
+                sh """
+                sudo docker tag $DOCKERHUB:${VERSION}
+                sudo docker tag $DOCKERHUB:latest
+                """
+            }
+        }
+    
 stage('Push Docker Image') {
 steps {
 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
