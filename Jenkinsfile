@@ -33,15 +33,6 @@ steps {
 sh 'sudo docker build -t $DOCKERHUB .'
 }
 }
-
-stage("Docker tag") {
-           steps {
-                sh """
-                sudo docker tag $DOCKERHUB:${VERSION}
-                sudo docker tag $DOCKERHUB:latest
-                """
-            }
-        }
     
 stage('Push Docker Image') {
 steps {
