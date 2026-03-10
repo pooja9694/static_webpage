@@ -1,2 +1,2 @@
-[worker]
-3.109.54.38 ansible_user=ubuntu
+[dev]
+3.109.54.38
