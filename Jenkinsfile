@@ -3,14 +3,14 @@ pipeline {
 agent any
 
 environment {
-DOCKERHUB = "yourdockerhubusername/static-web"
+DOCKERHUB = "pooja1096/static_webpage"
 }
 
 stages {
 
 stage('Clone Repository') {
 steps {
-git 'https://github.com/yourusername/project.git'
+git 'https://github.com/pooja9694/static_webpage.git'
 }
 }
 
