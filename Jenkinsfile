@@ -10,7 +10,7 @@ stages {
 
 stage('Clone Repository') {
 steps {
-git 'https://github.com/pooja9694/static_webpage.git'
+    git branch: 'main', url:'https://github.com/pooja9694/static_webpage.git'
 }
 }
 
