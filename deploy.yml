@@ -1,0 +1,12 @@
+---
+- name: Deploy Docker Container
+  hosts: worker
+  become: true
+
+  tasks:
+
+    - name: Pull Docker Image
+      command: docker pull pooja1096/static_webpage:latest
+
+    - name: Run Container
+      command: docker run -d -p 8085:80 --name static_web pooja1096/static_webpage:latest
