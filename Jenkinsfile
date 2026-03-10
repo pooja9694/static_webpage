@@ -41,7 +41,7 @@ docker push $DOCKERHUB
 
 stage('Deploy using Ansible') {
 steps {
-sh 'ansible-playbook -i hosts deploy.yml'
+sh "ansible-playbook -i hosts deploy.yml --ssh-extra-args='-o StrictHostKeyChecking=no'"
 }
 }
 
