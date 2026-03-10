@@ -1,13 +1,14 @@
 ---
-- hosts: worker
+- name: Deploy Static Webpage Container
+  hosts: worker
   become: true
 
   tasks:
 
-  - name: Pull Docker image
-    docker_container:
-      name: static-web
-      image: yourdockerhubusername/static-web:latest
-      state: started
-      ports:
-        - "8085:80"
+    - name: Pull Docker Image
+      docker_container:
+        name: static_web
+        image: pooja1096/static_webpage:latest
+        state: started
+        ports:
+          - "8085:80"
